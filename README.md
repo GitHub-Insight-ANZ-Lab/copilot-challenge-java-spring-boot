@@ -102,7 +102,7 @@ Additionally, create a unit test that validates the operation.
 
 From now on, you will have to create the unit tests for every new operation. Wasn't it easy with Copilot?
 
-- **/DaysBetweenDates**:
+- **/daysbetweendates**:
 
   - calculate days between two dates
   - receive by query string two parameters `date1` and `date2`, and calculate the days between those two dates.
@@ -129,19 +129,23 @@ From now on, you will have to create the unit tests for every new operation. Was
 - **/returncolorcode**:
 
   - receive by querystring a parameter called color
-  - read colors.json file and return the rgba field
+  - read colors.json file under resources and return the rgba field
   - get color var from querystring
   - iterate for each color in colors.json to find the color
-  - return the code.hex field
+  - return the hex field
+  - return 404 if not found
 
-> **_NOTE:_** Lets try Copilot chat now. Paste the above information and make it as detailed as possible in the Copilot chat text box. Copilot will use by default the open file as context in order to generate the suggestion.
+> **_NOTE:_** Hint: Use TDD. Start by creating the unit test and then implement the code.
+> Lets try Copilot chat now.
+> Paste the above information and make it as detailed as possible in the Copilot chat text box.
+> Copilot will use by default the open file as context in order to generate the suggestion.
 
 - **/tellmeajoke**:
 
   - Make a call to the joke api and return a random joke - <https://api.chucknorris.io/jokes/random>
 
 > **_NOTE:_** Here's example where you might need to use you own knowledge and judgement
-> to validate that Copilot follows best practices. Just because Copilot mimic
+> to validate that Copilot follows best practices. Just because Copilot mimics
 > what many developers do, doesn't always mean it's the correct way. You might need
 > to be extra specific in your prompt to let Copilot know what's best practices.
 

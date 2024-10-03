@@ -2,7 +2,11 @@
 
 ## Goal
 
-The goal of this exercise is to learn how to use GitHub Copilot, using an exercise that consist of building a REST API using Spring Boot.
+The goal is to create a REST API using Spring Boot and a corresponding Docker image with the help of GitHub Copilot.
+Follow the instructions below and try to use GitHub Copilot as much as possible.
+Try different things and see what GitHub Copilot can do for you, like generating a Dockerfile or a class, add comments, etc.
+
+> Make sure GitHub Copilot is configure and enabled for the current laguage, just check the status bar on the bottom right corner of VS Code.
 
 ## Instructions
 
@@ -10,8 +14,8 @@ The `copilot-demo` folder contains the Maven project and Maven installer.
 
 - `src` contains `main` and `test`. Where `main` is where the source code lives, and `test` contains the unit tests.
 - `Dockerfile` will be used to create a docker image for the project.
-- `mvnw` is the unix CLI that can be invoked to run the project.
-- `mvnw.cmd` is the Windows CLI that can be invoked to run the project.
+- `mvnw` is the unix CLI that can be invoked to use maven CLI.
+- `mvnw.cmd` is the Windows CLI that can be invoked to use maven CLI.
 
 To run Copilot inline on Windows you press `Ctrl + i` (Windows) / `⌘ + i` (Mac)
 
@@ -26,7 +30,6 @@ To run the app open a terminal in the `copilot-demo` folder and run:
 ```sh
 ./mvnw package
 ./mvnw spring-boot:run
-
 ```
 
 ### Unix Note
@@ -135,7 +138,7 @@ From now on, you will have to create the unit tests for every new operation. Was
 
 - **/tellmeajoke**:
 
-  - Make a call to the joke api and return a random joke - https://api.chucknorris.io/jokes/random
+  - Make a call to the joke api and return a random joke - <https://api.chucknorris.io/jokes/random>
 
 > **_NOTE:_** Here's example where you might need to use you own knowledge and judgement
 > to validate that Copilot follows best practices. Just because Copilot mimic
@@ -148,7 +151,7 @@ From now on, you will have to create the unit tests for every new operation. Was
   - Make a call to the movie api and return a list of movies of that director
   - Return the full list of movies
 
-> **_NOTE:_** This will require to browse to https://www.omdbapi.com/apikey.aspx and request a FREE API Key
+> **_NOTE:_** This will require to browse to <https://www.omdbapi.com/apikey.aspx> and request a FREE API Key
 
 - **/parseurl**:
 
@@ -186,7 +189,7 @@ Have you been building your Unit Tests along the way? If not this is the perfect
 
 We will create automated tests to check that the functionality of the previous endpoints is correctly implemented. The tests should be together in the `CopilotDemoApplicationTests.java` file.
 
-You can leverage Copilot to run the tests. There is a /tests command that you can directly run from Copilot Chat or by selecting the piece of code you want to create tests for and using the Copilot inline feature.
+You can leverage Copilot to run the tests. There is a `/tests` command that you can directly run from Copilot Chat or by selecting the piece of code you want to create tests for and using the Copilot inline feature.
 
 ### Exercise 5: Create a Dockerfile
 
@@ -194,7 +197,7 @@ Use the Dockerfile provided to create a docker image of the application. There a
 
 In order to build, run and test the docker image, you can use Copilot as well to generate the commands.
 
-For instance, create a DOCKER.md file where you can store the commands to build, run and test the docker image.
+For instance, create a `DOCKER.md` file where you can store the commands to build, run and test the docker image.
 
 Examples of steps to document: Build the container image, Run the container, Test the container.
 

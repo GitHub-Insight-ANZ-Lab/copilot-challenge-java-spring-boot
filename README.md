@@ -89,54 +89,125 @@ Let's now create a new unit test for the case when no key is provided in the req
 [INFO] ------------------------------------------------------------------------
 ```
 
-### 2. Dates comparison
+### Exercise 2: Building new functionalities
 
-New operation under /diffdates that calculates the difference between two dates. The operation should receive two dates as parameter in format dd-MM-yyyy and return the difference in days.
+For this exercise, the code can either but in their own controller, or you can reuse the existing `DemoController.java`
+
+Add the following endpoints using the help of Copilot.
 
 Additionally, create a unit test that validates the operation.
 
 From now on, you will have to create the unit tests for every new operation. Wasn't it easy with Copilot?
 
-### 3. Validate the format of a spanish phone
+- **/DaysBetweenDates**:
 
-Validate the format of a spanish phone number (+34 prefix, then 9 digits, starting with 6, 7 or 9). The operation should receive a phone number as parameter and return true if the format is correct, false otherwise.
+  - calculate days between two dates
+  - receive by query string two parameters `date1` and `date2`, and calculate the days between those two dates.
 
-### 4. Validate the format of a spanish DNI
+> **_NOTE:_** Use above information inside the Copilot inline feature. Press enter and wait for Copilot to suggest you the code.
 
-Validate the format of a spanish DNI (8 digits and 1 letter). The operation should receive a DNI as parameter and return true if the format is correct, false otherwise.
+- **/validatephonenumber**:
 
-### 5. From color name to hexadecimal code
+  - receive by querystring a parameter called phoneNumber
+  - validate phoneNumber with Spanish format, for example `+34666777888`
+  - if phoneNumber is valid return true
 
-Based on existing colors.json file under resources, given the name of the color as path parameter, return the hexadecimal code. If the color is not found, return 404
+> **_NOTE:_** Use above information inside a comment. Press enter and wait for Copilot to suggest you the code.
 
-Hint: Use TDD. Start by creating the unit test and then implement the code.
+- **/validatespanishdni**:
 
-### 6. Jokes creator
+  - receive by querystring a parameter called dni
+  - calculate DNI letter
+  - if DNI is valid return "valid"
+  - if DNI is not valid return "invalid"
 
-Create a new operation that call the API https://api.chucknorris.io/jokes/random and return the joke.
+> **_NOTE:_** Use above information inside a comment. In this case, you may want to see multiple solutions from Copilot to pick the one that best fits the way to calculate the letter. In order to see the firs 10 suggestions from Copilot press `ctrl/⌘ + enter`.
 
-### 7. URL parsing
+- **/returncolorcode**:
 
-Given a url as query parameter, parse it and return the protocol, host, port, path and query parameters. The response should be in Json format.
+  - receive by querystring a parameter called color
+  - read colors.json file and return the rgba field
+  - get color var from querystring
+  - iterate for each color in colors.json to find the color
+  - return the code.hex field
 
-### 8. List files and folders
+> **_NOTE:_** Lets try Copilot chat now. Paste the above information and make it as detailed as possible in the Copilot chat text box. Copilot will use by default the open file as context in order to generate the suggestion.
 
-List files and folders under a given path. The path should be a query parameter. The response should be in Json format.
+- **/tellmeajoke**:
 
-### 9. Word counting
+  - Make a call to the joke api and return a random joke - https://api.chucknorris.io/jokes/random
 
-Given the path of a file and count the number of occurrence of a provided word. The path and the word should be query parameters. The response should be in Json format.
+> **_NOTE:_** Here's example where you might need to use you own knowledge and judgement
+> to validate that Copilot follows best practices. Just because Copilot mimic
+> what many developers do, doesn't always mean it's the correct way. You might need
+> to be extra specific in your prompt to let Copilot know what's best practices.
 
-### 10. Zipping
+- **/moviesbydirector**:
 
-Create a zip file with the content of a given folder. The path of the folder should be a query parameter.
+  - Receive by querystring a parameter called director
+  - Make a call to the movie api and return a list of movies of that director
+  - Return the full list of movies
 
-### 11. Containerize the application
+> **_NOTE:_** This will require to browse to https://www.omdbapi.com/apikey.aspx and request a FREE API Key
+
+- **/parseurl**:
+
+  - Retrieves a parameter from querystring called someurl
+  - Parse the url and return the protocol, host, port, path, querystring and hash
+  - Return the parsed host
+
+> **_NOTE:_** Copilot can help you learn new frameworks.
+
+- **/listfiles**:
+
+  - Get the current directory
+  - Get the list of files in the current directory
+  - Return the list of files
+
+> **_NOTE:_** Copilot can also help with these kind of commands locally. The feature is called Copilot in the CLI. You can learn more information about this feature [here](https://docs.github.com/en/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli).
+
+- **/calculatememoryconsumption**:
+
+  - Return the memory consumption of the process in GB, rounded to 2 decimals
+
+- **/randomeuropeancountry**:
+
+  - Make an array of european countries and its iso codes
+  - Return a random country from the array
+  - Return the country and its iso code
+
+### Exercise 3: Document the code
+
+Documenting code is always a boring and painful task. However, we can use Copilot to document it for us. In the chat, ask Copilot to add javadoc to all of your files.
+
+### Exercise 4: Verify Tests
+
+Have you been building your Unit Tests along the way? If not this is the perfect time to take a breather and get Copilot to write some unit tests for you!
+
+We will create automated tests to check that the functionality of the previous endpoints is correctly implemented. The tests should be together in the `CopilotDemoApplicationTests.java` file.
+
+You can leverage Copilot to run the tests. There is a /tests command that you can directly run from Copilot Chat or by selecting the piece of code you want to create tests for and using the Copilot inline feature.
+
+### Exercise 5: Create a Dockerfile
 
 Use the Dockerfile provided to create a docker image of the application. There are some comments in the Dockerfile that will help you to complete the exercise.
 
 In order to build, run and test the docker image, you can use Copilot as well to generate the commands.
 
-For instance, create a DOCKER.md file where you can store the commands to build, run and test the docker image. You will notice that Copilot will also help you to document your project and commands.
+For instance, create a DOCKER.md file where you can store the commands to build, run and test the docker image.
 
 Examples of steps to document: Build the container image, Run the container, Test the container.
+
+## Summary
+
+With the previous exercises you have gone through some common activities that developers usually run:
+
+- Create new features in the code
+- Work with external APIs
+- Create documentation
+- Create tests
+
+However, there are many other things that Copilot can helkp you with. Feel free to explore other slash command in the Copilot chat like:
+
+- `/fix`: to fix the problems in your code
+- `/explain`: for Copilot to explain you what the code does

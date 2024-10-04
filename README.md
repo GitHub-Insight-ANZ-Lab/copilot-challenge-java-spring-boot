@@ -8,6 +8,10 @@ Try different things and see what GitHub Copilot can do for you, like generating
 
 > Make sure GitHub Copilot is configure and enabled for the current laguage, just check the status bar on the bottom right corner of VS Code.
 
+> If you are running this exercise in local environment, please make sure JDK 18 and above is installed.
+
+> If you are running this exercise in GitHub Codespaces, the java environment is already setup.
+
 ## Instructions
 
 The `copilot-demo` folder contains the Maven project and Maven installer.
@@ -19,17 +23,17 @@ The `copilot-demo` folder contains the Maven project and Maven installer.
 
 To run Copilot inline on Windows you press `Ctrl + i` (Windows) / `⌘ + i` (Mac)
 
-To run the tests open a terminal in the `copilot-demo` folder and run:
-
-```sh
-./mvnw test
-```
-
 To run the app open a terminal in the `copilot-demo` folder and run:
 
 ```sh
 ./mvnw package
 ./mvnw spring-boot:run
+```
+
+To run the tests open a terminal in the `copilot-demo` folder and run:
+
+```sh
+./mvnw test
 ```
 
 ### Unix Note
@@ -41,13 +45,26 @@ Please run the following to give it execute permissions.
 chmod +x ./mvnw
 ```
 
-### Exercise 1: Introduction
+### Exercise 1: Write a GET Request
 
 For this exercise we will be adding a new endpoint to handle a simple GET request.
 
 - Move to the `src/main/.../DemoController.java` file
-- Start writing the code to handle a simple GET request based on the javadoc comment. Just press enter and wait a couple of seconds, Copilot will generate the code for you.
+- Start writing the code to handle a simple GET request based on the javadoc comment. 
+- Just press enter and wait a couple of seconds, Copilot will generate the code for you.
 - Alternatively, you can test the Copilot inline feature by pressing `ctrl/⌘ + i`. Then write in the text box the desired behaviour.
+
+You can now run the application and then test it with curl.
+
+1. Run the spring app: `./mvnw spring-boot:run`
+2. Test with curl: `curl -v http://localhost:8080/hello?key=world`
+3. If you are using GitHub `Codespaces`, replace localhost:8080 with actual `Codespaces` url.
+
+
+### Exercise 2: Write a Test Case
+
+There is an existing unit test `src/test/.../CopilotDemoApplicationTests.java`, run below command to test it.
+
 - run `./mvnw test`
 - If the test passed you should see something like this:
 
@@ -65,11 +82,6 @@ For this exercise we will be adding a new endpoint to handle a simple GET reques
 [INFO] Finished at: 2024-10-03T10:49:49+08:00
 [INFO] ------------------------------------------------------------------------
 ```
-
-You can now run the application and then test it with curl.
-
-1. Run the spring app: `./mvnw spring-boot:run`
-2. Test with curl: `curl -v http://localhost:8080/hello?key=world`
 
 Let's now create a new unit test for the case when no key is provided in the request.
 
@@ -92,15 +104,11 @@ Let's now create a new unit test for the case when no key is provided in the req
 [INFO] ------------------------------------------------------------------------
 ```
 
-### Exercise 2: Building new functionalities
+### Exercise 3: Building more functionalities
 
-For this exercise, the code can either but in their own controller, or you can reuse the existing `DemoController.java`
+For this exercise, the code can either but in their own controller, or you can reuse the existing `DemoController.java`.
 
-Add the following endpoints using the help of Copilot.
-
-Additionally, create a unit test that validates the operation.
-
-From now on, you will have to create the unit tests for every new operation. Wasn't it easy with Copilot?
+Add the following endpoints using the help of Copilot, then also create the unit tests for every new operation. It is pretty easy with Copilot !
 
 - **/daysbetweendates**:
 
@@ -139,6 +147,12 @@ From now on, you will have to create the unit tests for every new operation. Was
 > Lets try Copilot chat now.
 > Paste the above information and make it as detailed as possible in the Copilot chat text box.
 > Copilot will use by default the open file as context in order to generate the suggestion.
+
+
+### Exercise 4: Building more integrations
+
+We have tried out write coding for a few simple tasks earlier. Now let's explore more complex integrations.
+
 
 - **/tellmeajoke**:
 
@@ -183,11 +197,13 @@ From now on, you will have to create the unit tests for every new operation. Was
   - Return a random country from the array
   - Return the country and its iso code
 
-### Exercise 3: Document the code
+### Exercise 5: Document the code
 
 Documenting code is always a boring and painful task. However, we can use Copilot to document it for us. In the chat, ask Copilot to add javadoc to all of your files.
 
-### Exercise 4: Verify Tests
+You can use `@workspaces` to write documentation for the whole repo.
+
+### Exercise 6: Verify Tests
 
 Have you been building your Unit Tests along the way? If not this is the perfect time to take a breather and get Copilot to write some unit tests for you!
 
@@ -195,7 +211,7 @@ We will create automated tests to check that the functionality of the previous e
 
 You can leverage Copilot to run the tests. There is a `/tests` command that you can directly run from Copilot Chat or by selecting the piece of code you want to create tests for and using the Copilot inline feature.
 
-### Exercise 5: Create a Dockerfile
+### Exercise 7: Create a Dockerfile
 
 Use the Dockerfile provided to create a docker image of the application. There are some comments in the Dockerfile that will help you to complete the exercise.
 

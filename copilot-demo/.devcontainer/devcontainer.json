@@ -1,0 +1,26 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "17"
+        }
+    },
+	"hostRequirements": {
+	  "cpus": 2
+	},
+	"waitFor": "onCreateCommand",
+	// "updateContentCommand": "",
+	"postCreateCommand": "",
+	"customizations": {
+	  "codespaces": {
+		"openFiles": []
+	  },
+	  "vscode": {
+		"extensions": [
+		  "vscjava.vscode-java-debug",
+		  "vscjava.vscode-java-pack",
+          "ms-azuretools.vscode-docker"
+		]
+	  }
+	}
+  }

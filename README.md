@@ -50,7 +50,7 @@ chmod +x ./mvnw
 For this exercise we will be adding a new endpoint to handle a simple GET request.
 
 - Move to the `src/main/.../DemoController.java` file
-- Start writing the code to handle a simple GET request based on the javadoc comment. 
+- Start writing the code to handle a simple GET request based on the javadoc comment.
 - Just press enter and wait a couple of seconds, Copilot will generate the code for you.
 - Alternatively, you can test the Copilot inline feature by pressing `ctrl/⌘ + i`. Then write in the text box the desired behaviour.
 
@@ -59,7 +59,6 @@ You can now run the application and then test it with curl.
 1. Run the spring app: `./mvnw spring-boot:run`
 2. Test with curl: `curl -v http://localhost:8080/hello?key=world`
 3. If you are using GitHub `Codespaces`, replace localhost:8080 with actual `Codespaces` url.
-
 
 ### Exercise 2: Write a Test Case
 
@@ -106,7 +105,7 @@ Let's now create a new unit test for the case when no key is provided in the req
 
 ### Exercise 3: Building more functionalities
 
-For this exercise, the code can either but in their own controller, or you can reuse the existing `DemoController.java`.
+For this exercise, reuse the existing `DemoController.java`.
 
 Add the following endpoints using the help of Copilot, then also create the unit tests for every new operation. It is pretty easy with Copilot !
 
@@ -148,11 +147,17 @@ Add the following endpoints using the help of Copilot, then also create the unit
 > Paste the above information and make it as detailed as possible in the Copilot chat text box.
 > Copilot will use by default the open file as context in order to generate the suggestion.
 
+### Exercise 4: Refactor your endpoints
 
-### Exercise 4: Building more integrations
+In exercise 3, we have created a few endpoints in the `DemoController.java` file. Now let's refactor the code to make it more readable and maintainable by moving those endpoints into separate controllers. With the `DemoController.java` file open, ask Copilot using the chat feature how to refactor those endpoints into separate files.
+
+> **_NOTE:_** You can use the `@workspaces` command to give Copilot the context of the structure of the whole repo.
+
+### Exercise 5: Building more integrations
 
 We have tried out write coding for a few simple tasks earlier. Now let's explore more complex integrations.
 
+> **_NOTE:_** You should follow the same pattern as the previous exercise and create each new endpoint in a separate controllers.
 
 - **/tellmeajoke**:
 
@@ -197,13 +202,19 @@ We have tried out write coding for a few simple tasks earlier. Now let's explore
   - Return a random country from the array
   - Return the country and its iso code
 
-### Exercise 5: Document the code
+### Exercise 6: Refactor the code to follow REST principles
+
+At this point in the previous exercises, we created a number of endpoints that are not following REST principles. Let's refactor the code to follow REST principles. You should also update the Swagger documentation, so that each endpoint has a summary and is grouped using tags.
+
+Ask Copilot how you could achieve this. You can use the `@workspaces` command to give Copilot the context of the structure of the whole repo.
+
+### Exercise 7: Document the code
 
 Documenting code is always a boring and painful task. However, we can use Copilot to document it for us. In the chat, ask Copilot to add javadoc to all of your files.
 
 You can use `@workspaces` to write documentation for the whole repo.
 
-### Exercise 6: Verify Tests
+### Exercise 8: Verify Tests
 
 Have you been building your Unit Tests along the way? If not this is the perfect time to take a breather and get Copilot to write some unit tests for you!
 
@@ -211,7 +222,7 @@ We will create automated tests to check that the functionality of the previous e
 
 You can leverage Copilot to run the tests. There is a `/tests` command that you can directly run from Copilot Chat or by selecting the piece of code you want to create tests for and using the Copilot inline feature.
 
-### Exercise 7: Create a Dockerfile
+### Exercise 9: Create a Dockerfile
 
 Use the Dockerfile provided to create a docker image of the application. There are some comments in the Dockerfile that will help you to complete the exercise.
 
@@ -227,10 +238,11 @@ With the previous exercises you have gone through some common activities that de
 
 - Create new features in the code
 - Work with external APIs
+- Refactor an existing codebase
 - Create documentation
 - Create tests
 
-However, there are many other things that Copilot can helkp you with. Feel free to explore other slash command in the Copilot chat like:
+However, there are many other things that Copilot can help you with. Feel free to explore other slash command in the Copilot chat like:
 
 - `/fix`: to fix the problems in your code
 - `/explain`: for Copilot to explain you what the code does

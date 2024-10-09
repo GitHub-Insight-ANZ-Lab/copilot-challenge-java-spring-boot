@@ -202,19 +202,25 @@ We have tried out write coding for a few simple tasks earlier. Now let's explore
   - Return a random country from the array
   - Return the country and its iso code
 
-### Exercise 6: Refactor the code to follow REST principles
+### Exercise 6: Adding in Swagger
+
+Lets now add in Swagger to the project. This will involve installing the following dependency `springfox-boot-starter`. The version should be `3.0.0`.
+
+Ask Copilot how you could achieve this. You can use the `@workspaces` command to give Copilot the context of the structure of the whole repo.
+
+### Exercise 7: Refactor the code to follow REST principles
 
 At this point in the previous exercises, we created a number of endpoints that are not following REST principles. Let's refactor the code to follow REST principles. You should also update the Swagger documentation, so that each endpoint has a summary and is grouped using tags.
 
 Ask Copilot how you could achieve this. You can use the `@workspaces` command to give Copilot the context of the structure of the whole repo.
 
-### Exercise 7: Document the code
+### Exercise 8: Document the code
 
 Documenting code is always a boring and painful task. However, we can use Copilot to document it for us. In the chat, ask Copilot to add javadoc to all of your files.
 
 You can use `@workspaces` to write documentation for the whole repo.
 
-### Exercise 8: Verify Tests
+### Exercise 9: Verify Tests
 
 Have you been building your Unit Tests along the way? If not this is the perfect time to take a breather and get Copilot to write some unit tests for you!
 
@@ -222,7 +228,7 @@ We will create automated tests to check that the functionality of the previous e
 
 You can leverage Copilot to run the tests. There is a `/tests` command that you can directly run from Copilot Chat or by selecting the piece of code you want to create tests for and using the Copilot inline feature.
 
-### Exercise 9: Create a Dockerfile
+### Exercise 10: Create a Dockerfile
 
 Use the Dockerfile provided to create a docker image of the application. There are some comments in the Dockerfile that will help you to complete the exercise.
 

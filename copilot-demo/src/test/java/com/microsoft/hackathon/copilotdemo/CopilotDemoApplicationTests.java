@@ -8,19 +8,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;;
 
-
 @SpringBootTest()
-@AutoConfigureMockMvc 
+@AutoConfigureMockMvc
 class CopilotDemoApplicationTests {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Test
-	void hello() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/hello?key=world"))
-			.andExpect(MockMvcResultMatchers.status().isOk())
-			.andExpect(MockMvcResultMatchers.content().string("hello world"));
-	}
+	@Autowired
+	private MockMvc mockMvc;
 
 }

@@ -15,4 +15,6 @@ class CopilotDemoApplicationTests {
 	@Autowired
 	private MockMvc mockMvc;
 
+	// Create a test to check if the /hello GET operation that accepts key as query parameter and returns "hello <key>" is working correctly.
+
 }

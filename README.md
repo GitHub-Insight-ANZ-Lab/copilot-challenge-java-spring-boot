@@ -45,7 +45,7 @@ Please run the following to give it execute permissions.
 chmod +x ./mvnw
 ```
 
-### Exercise 1: Write a GET Request
+### Exercise 1: Write a "Hello world" GET Request
 
 For this exercise we will be adding a new endpoint to handle a simple GET request.
 
@@ -60,10 +60,12 @@ You can now run the application and then test it with curl.
 2. Test with curl: `curl -v http://localhost:8080/hello?key=world`
 3. If you are using GitHub `Codespaces`, replace localhost:8080 with actual `Codespaces` url.
 
-### Exercise 2: Write a Test Case
+### Exercise 2: Write a "Hello world" Test Case
 
-There is an existing unit test `src/test/.../CopilotDemoApplicationTests.java`, run below command to test it.
+Navigate to `src/test/.../CopilotDemoApplicationTests.java`, to start writing your first test.
 
+- Just press enter and wait a couple of seconds, Copilot will generate the code for you.
+- Alternatively, you can test the Copilot inline feature by pressing `ctrl/⌘ + i`. Then write in the text box the desired behaviour.
 - run `./mvnw test`
 - If the test passed you should see something like this:
 

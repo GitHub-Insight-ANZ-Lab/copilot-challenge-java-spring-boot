@@ -6,11 +6,30 @@ The goal is to create a REST API using Spring Boot and a corresponding Docker im
 Follow the instructions below and try to use GitHub Copilot as much as possible.
 Try different things and see what GitHub Copilot can do for you, like generating a Dockerfile or a class, add comments, etc.
 
-> Make sure GitHub Copilot is configure and enabled for the current laguage, just check the status bar on the bottom right corner of VS Code.
-
-> If you are running this exercise in local environment, please make sure JDK 18 and above is installed.
+## Pre-requisites
+> Make sure GitHub Copilot is configured and enabled for the current laguage, just check the status bar on the bottom right corner of VS Code.
 
 > If you are running this exercise in GitHub Codespaces, the java environment is already setup.
+
+> If you are running this exercise in local environment, please make sure that:
+- JDK 18 and above is installed. If not installed already, please download from: https://www.oracle.com/au/java/technologies/downloads/
+- The environment variable for 'JAVA_HOME' is set. If not, please do one of the following:
+  - **Windows 7** – Right click My Computer and select Properties > Advanced
+  - **Windows 8** – Go to Control Panel > System > Advanced System Settings
+  - **Windows 10** – Search for Environment Variables then select Edit the system environment variables
+- Click the **Environment Variables** button.
+- Under **System Variables**, click **New**.
+- In the **Variable Name** field, enter either:
+  - *JAVA_HOME* if you installed the JDK (Java Development Kit)
+    or
+  - *JRE_HOME* if you installed the JRE (Java Runtime Environment)
+- In the **Variable** Value field, enter your JDK or JRE installation path.
+![alt text](image-environment_variable.png)
+- Click **OK** and **Apply** Changes as prompted
+
+> You may need to close and re-open any command windows that were open before you made these changes, as there's no way to reload environment variables from an active command prompt. If the changes don't take effect after reopening the command window, restart Windows.
+
+
 
 ## Instructions
 

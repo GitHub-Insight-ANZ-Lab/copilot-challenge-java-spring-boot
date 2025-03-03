@@ -12,7 +12,7 @@ Try different things and see what GitHub Copilot can do for you, like generating
 > If you are running this exercise in GitHub Codespaces, the java environment is already setup.
 
 > If you are running this exercise in local environment, please make sure that:
-- JDK 18 and above is installed. If not installed already, please download from: https://www.oracle.com/au/java/technologies/downloads/
+- JDK 18 and above is installed. If not installed already, please download from: https://www.oracle.com/au/java/technologies/downloads/ (e.g. jdk-23_windows-x64_bin.msi)
 - The environment variable for 'JAVA_HOME' is set. If not, please do one of the following:
   - **Windows 7** – Right click My Computer and select Properties > Advanced
   - **Windows 8** – Go to Control Panel > System > Advanced System Settings
@@ -24,12 +24,14 @@ Try different things and see what GitHub Copilot can do for you, like generating
     or
   - *JRE_HOME* if you installed the JRE (Java Runtime Environment)
 - In the **Variable** Value field, enter your JDK or JRE installation path.
-![alt text](image-environment_variable.png)
+
+  ![env var](image-environment_variable.png)
 - Click **OK** and **Apply** Changes as prompted
 
 > You may need to close and re-open any command windows that were open before you made these changes, as there's no way to reload environment variables from an active command prompt. If the changes don't take effect after reopening the command window, restart Windows.
 
-
+> Tips: Run `$env:JAVA_Home` in PowerShell to check current `JAVA_Home`. You can also use `$env:JAVA_Home="C:\Program Files\Java\jdk-23"` to set current terminal to use the jdk path.
+  ![java home](image-java-home-env.png)
 
 ## Instructions
 

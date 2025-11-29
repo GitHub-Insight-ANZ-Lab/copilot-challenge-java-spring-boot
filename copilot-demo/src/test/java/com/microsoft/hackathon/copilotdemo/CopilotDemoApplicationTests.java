@@ -31,4 +31,12 @@ class CopilotDemoApplicationTests {
 				.andExpect(MockMvcResultMatchers.content().string("key not passed"));
 	}
 
+	// Create a test to check if the /hello GET operation returns "key not passed" when an empty key is provided
+	@Test
+	void testHelloWithEmptyKey() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/hello").param("key", ""))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(MockMvcResultMatchers.content().string("key not passed"));
+	}
+
 }

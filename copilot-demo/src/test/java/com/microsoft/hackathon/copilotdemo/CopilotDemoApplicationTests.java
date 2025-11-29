@@ -16,5 +16,19 @@ class CopilotDemoApplicationTests {
 	private MockMvc mockMvc;
 
 	// Create a test to check if the /hello GET operation that accepts key as query parameter and returns "hello <key>" is working correctly.
+	@Test
+	void testHelloWithKey() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/hello").param("key", "world"))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(MockMvcResultMatchers.content().string("hello world"));
+	}
+
+	// Create a test to check if the /hello GET operation returns "key not passed" when no key is provided
+	@Test
+	void testHelloWithoutKey() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/hello"))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(MockMvcResultMatchers.content().string("key not passed"));
+	}
 
 }

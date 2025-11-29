@@ -15,7 +15,7 @@ public class DemoController {
 
     @GetMapping("/hello")
     public String hello(@RequestParam(required = false) String key) {
-        if (key == null) {
+        if (key == null || key.isEmpty()) {
             return "key not passed";
         }
         return "hello " + key;

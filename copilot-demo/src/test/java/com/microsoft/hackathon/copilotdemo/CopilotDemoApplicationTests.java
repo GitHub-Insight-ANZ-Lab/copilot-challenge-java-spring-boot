@@ -39,4 +39,35 @@ class CopilotDemoApplicationTests {
 				.andExpect(MockMvcResultMatchers.content().string("key not passed"));
 	}
 
+	// Test the /hello endpoint with special characters in the key
+	@Test
+	void testHelloWithSpecialCharacters() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/hello").param("key", "test@#$%"))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(MockMvcResultMatchers.content().string("hello test@#$%"));
+	}
+
+	// Test the /hello endpoint with numeric key
+	@Test
+	void testHelloWithNumericKey() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/hello").param("key", "12345"))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(MockMvcResultMatchers.content().string("hello 12345"));
+	}
+
+	// Test the /hello endpoint with whitespace-only key returns the key with whitespace preserved
+	@Test
+	void testHelloWithWhitespaceKey() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/hello").param("key", "   "))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(MockMvcResultMatchers.content().string("hello    "));
+	}
+
+	// Test the /hello endpoint returns Method Not Allowed for POST requests
+	@Test
+	void testHelloPostMethodNotAllowed() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.post("/hello").param("key", "world"))
+				.andExpect(MockMvcResultMatchers.status().isMethodNotAllowed());
+	}
+
 }
